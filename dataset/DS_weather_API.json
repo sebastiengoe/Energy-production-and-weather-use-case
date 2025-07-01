@@ -3,15 +3,18 @@
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Weather API",
-			"type": "LinkedServiceReference",
-			"parameters": {
-				"q": "London"
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"q": {
+				"type": "string",
+				"defaultValue": "London"
 			}
 		},
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
-			"relativeUrl": "/current.xml"
+			"relativeUrl": "/current.json"
 		},
 		"schema": []
 	}
