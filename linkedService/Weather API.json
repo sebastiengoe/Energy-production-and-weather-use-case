@@ -3,19 +3,13 @@
 	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"description": "WeatherAPI.com provides access to weather and geo data via a JSON/XML restful API. It allows developers to create desktop, web and mobile applications using this data very easy. We provide following data through our API:\n\n",
-		"parameters": {
-			"q": {
-				"type": "string",
-				"defaultValue": "London"
-			}
-		},
 		"annotations": [],
 		"type": "RestService",
 		"typeProperties": {
 			"url": "http://api.weatherapi.com/v1",
 			"enableServerCertificateValidation": false,
 			"authenticationType": "Anonymous",
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDg4QkZBMEIzLUM3QjctNDRENS1CNTc3LUQ4MUUzNkQwNjcwNV9mOGU2MzVhZi1mNDBlLTRkMTctYTg2Zi04ODA0OGViYWYxNGYiDQp9"
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDg4QkZBMEIzLUM3QjctNDRENS1CNTc3LUQ4MUUzNkQwNjcwNV80YjlhZjVlZS1iMmUyLTRmOTctYTA4Yi02YmU4NGMwNDQwYTUiDQp9"
 		}
 	}
 }
