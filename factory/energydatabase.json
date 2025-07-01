@@ -1,0 +1,9 @@
+{
+	"name": "energydatabase",
+	"location": "westeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "b1dd86ac-d4fc-4c85-b26c-695924af82b7",
+		"tenantId": "211f8b85-5b24-4272-a19b-7b4cba8cf0a6"
+	}
+}
