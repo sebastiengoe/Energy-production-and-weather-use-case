@@ -2,17 +2,11 @@
 	"name": "Weather API",
 	"properties": {
 		"description": "WeatherAPI.com provides access to weather and geo data via a JSON/XML restful API. It allows developers to create desktop, web and mobile applications using this data very easy. We provide following data through our API:\n\n",
-		"parameters": {
-			"key": {
-				"type": "string",
-				"defaultValue": "613382a0ad58496ea20112028252506"
-			}
-		},
 		"annotations": [],
 		"type": "RestService",
 		"typeProperties": {
-			"url": "http://api.weatherapi.com/v1",
-			"enableServerCertificateValidation": true,
+			"url": "http://api.weatherapi.com/v1/current.json?key=613382a0ad58496ea20112028252506&q=London&aqi=no",
+			"enableServerCertificateValidation": false,
 			"authenticationType": "Anonymous"
 		}
 	},
