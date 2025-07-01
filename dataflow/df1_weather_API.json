@@ -1,0 +1,30 @@
+{
+	"name": "df1_weather_API",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "DS_weather_API",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [],
+			"transformations": [],
+			"scriptLines": [
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     httpMethod: 'GET',",
+				"     timeout: 30,",
+				"     responseFormat: ['type' -> 'json', 'documentForm' -> 'singleDocument'],",
+				"     dateFormats: ['yyyy-MM-dd'],",
+				"     preferredIntegralType: 'integer',",
+				"     preferredFractionalType: 'float',",
+				"     booleanFormat: ['true', 'false']) ~> source1"
+			]
+		}
+	}
+}
