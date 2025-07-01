@@ -5,8 +5,8 @@
 		"annotations": [],
 		"type": "RestService",
 		"typeProperties": {
-			"url": "http://api.weatherapi.com/v1",
-			"enableServerCertificateValidation": false,
+			"url": "http://api.weatherapi.com/v1/",
+			"enableServerCertificateValidation": true,
 			"authenticationType": "Anonymous"
 		}
 	},
