@@ -27,8 +27,8 @@
 			],
 			"transformations": [],
 			"scriptLines": [
-				"source(allowSchemaDrift: false,",
-				"     validateSchema: true,",
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false,",
 				"     httpMethod: 'GET',",
 				"     timeout: 30,",
 				"     requestInterval: 0,",
