@@ -6,9 +6,6 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"key": {
-				"type": "securestring"
-			},
 			"q": {
 				"type": "string",
 				"defaultValue": "London"
