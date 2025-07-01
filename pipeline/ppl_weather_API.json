@@ -34,10 +34,7 @@
 				"inputs": [
 					{
 						"referenceName": "DS_weather_API",
-						"type": "DatasetReference",
-						"parameters": {
-							"key": "613382a0ad58496ea20112028252506"
-						}
+						"type": "DatasetReference"
 					}
 				],
 				"outputs": [

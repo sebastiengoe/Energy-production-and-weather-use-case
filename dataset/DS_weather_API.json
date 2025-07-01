@@ -5,16 +5,6 @@
 			"referenceName": "Weather API",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"q": {
-				"type": "string",
-				"defaultValue": "London"
-			},
-			"aqi": {
-				"type": "string",
-				"defaultValue": "no"
-			}
-		},
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
