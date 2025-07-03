@@ -1,0 +1,376 @@
+{
+	"name": "CopyPipeline_360",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_360",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Destination",
+						"value": "weatherrawdata//"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "RestSource",
+						"httpRequestTimeout": "00:01:40",
+						"requestInterval": "00.00:00:00.010",
+						"requestMethod": "GET"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['location']['name']"
+								},
+								"sink": {
+									"name": "name"
+								}
+							},
+							{
+								"source": {
+									"path": "$['location']['region']"
+								},
+								"sink": {
+									"name": "region"
+								}
+							},
+							{
+								"source": {
+									"path": "$['location']['country']"
+								},
+								"sink": {
+									"name": "country"
+								}
+							},
+							{
+								"source": {
+									"path": "$['location']['lat']"
+								},
+								"sink": {
+									"name": "lat"
+								}
+							},
+							{
+								"source": {
+									"path": "$['location']['lon']"
+								},
+								"sink": {
+									"name": "lon"
+								}
+							},
+							{
+								"source": {
+									"path": "$['location']['tz_id']"
+								},
+								"sink": {
+									"name": "tz_id"
+								}
+							},
+							{
+								"source": {
+									"path": "$['location']['localtime_epoch']"
+								},
+								"sink": {
+									"name": "localtime_epoch"
+								}
+							},
+							{
+								"source": {
+									"path": "$['location']['localtime']"
+								},
+								"sink": {
+									"name": "localtime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['last_updated_epoch']"
+								},
+								"sink": {
+									"name": "last_updated_epoch"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['last_updated']"
+								},
+								"sink": {
+									"name": "last_updated"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['temp_c']"
+								},
+								"sink": {
+									"name": "temp_c"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['temp_f']"
+								},
+								"sink": {
+									"name": "temp_f"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['is_day']"
+								},
+								"sink": {
+									"name": "is_day"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['condition']['text']"
+								},
+								"sink": {
+									"name": "text"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['condition']['icon']"
+								},
+								"sink": {
+									"name": "icon"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['condition']['code']"
+								},
+								"sink": {
+									"name": "code"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['wind_mph']"
+								},
+								"sink": {
+									"name": "wind_mph"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['wind_kph']"
+								},
+								"sink": {
+									"name": "wind_kph"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['wind_degree']"
+								},
+								"sink": {
+									"name": "wind_degree"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['wind_dir']"
+								},
+								"sink": {
+									"name": "wind_dir"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['pressure_mb']"
+								},
+								"sink": {
+									"name": "pressure_mb"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['pressure_in']"
+								},
+								"sink": {
+									"name": "pressure_in"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['precip_mm']"
+								},
+								"sink": {
+									"name": "precip_mm"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['precip_in']"
+								},
+								"sink": {
+									"name": "precip_in"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['humidity']"
+								},
+								"sink": {
+									"name": "humidity"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['cloud']"
+								},
+								"sink": {
+									"name": "cloud"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['feelslike_c']"
+								},
+								"sink": {
+									"name": "feelslike_c"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['feelslike_f']"
+								},
+								"sink": {
+									"name": "feelslike_f"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['windchill_c']"
+								},
+								"sink": {
+									"name": "windchill_c"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['windchill_f']"
+								},
+								"sink": {
+									"name": "windchill_f"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['heatindex_c']"
+								},
+								"sink": {
+									"name": "heatindex_c"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['heatindex_f']"
+								},
+								"sink": {
+									"name": "heatindex_f"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['dewpoint_c']"
+								},
+								"sink": {
+									"name": "dewpoint_c"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['dewpoint_f']"
+								},
+								"sink": {
+									"name": "dewpoint_f"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['vis_km']"
+								},
+								"sink": {
+									"name": "vis_km"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['vis_miles']"
+								},
+								"sink": {
+									"name": "vis_miles"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['uv']"
+								},
+								"sink": {
+									"name": "uv"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['gust_mph']"
+								},
+								"sink": {
+									"name": "gust_mph"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['gust_kph']"
+								},
+								"sink": {
+									"name": "gust_kph"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_360",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_360",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
