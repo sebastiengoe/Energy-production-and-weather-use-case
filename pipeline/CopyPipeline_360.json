@@ -27,14 +27,13 @@
 						"requestMethod": "GET"
 					},
 					"sink": {
-						"type": "DelimitedTextSink",
+						"type": "ParquetSink",
 						"storeSettings": {
-							"type": "AzureBlobStorageWriteSettings"
+							"type": "AzureBlobStorageWriteSettings",
+							"copyBehavior": "PreserveHierarchy"
 						},
 						"formatSettings": {
-							"type": "DelimitedTextWriteSettings",
-							"quoteAllText": true,
-							"fileExtension": ".txt"
+							"type": "ParquetWriteSettings"
 						}
 					},
 					"enableStaging": false,
@@ -47,7 +46,8 @@
 									"path": "$['location']['name']"
 								},
 								"sink": {
-									"name": "name"
+									"name": "name",
+									"type": "String"
 								}
 							},
 							{
@@ -55,7 +55,8 @@
 									"path": "$['location']['region']"
 								},
 								"sink": {
-									"name": "region"
+									"name": "region",
+									"type": "String"
 								}
 							},
 							{
@@ -63,7 +64,8 @@
 									"path": "$['location']['country']"
 								},
 								"sink": {
-									"name": "country"
+									"name": "country",
+									"type": "String"
 								}
 							},
 							{
@@ -71,7 +73,8 @@
 									"path": "$['location']['lat']"
 								},
 								"sink": {
-									"name": "lat"
+									"name": "lat",
+									"type": "Int16"
 								}
 							},
 							{
@@ -79,7 +82,8 @@
 									"path": "$['location']['lon']"
 								},
 								"sink": {
-									"name": "lon"
+									"name": "lon",
+									"type": "Int16"
 								}
 							},
 							{
@@ -87,7 +91,8 @@
 									"path": "$['location']['tz_id']"
 								},
 								"sink": {
-									"name": "tz_id"
+									"name": "tz_id",
+									"type": "Int16"
 								}
 							},
 							{
@@ -95,7 +100,8 @@
 									"path": "$['location']['localtime_epoch']"
 								},
 								"sink": {
-									"name": "localtime_epoch"
+									"name": "localtime_epoch",
+									"type": "DateTime"
 								}
 							},
 							{
@@ -103,7 +109,8 @@
 									"path": "$['location']['localtime']"
 								},
 								"sink": {
-									"name": "localtime"
+									"name": "localtime",
+									"type": "DateTimeOffset"
 								}
 							},
 							{
@@ -111,7 +118,8 @@
 									"path": "$['current']['last_updated_epoch']"
 								},
 								"sink": {
-									"name": "last_updated_epoch"
+									"name": "last_updated_epoch",
+									"type": "DateTime"
 								}
 							},
 							{
@@ -119,7 +127,8 @@
 									"path": "$['current']['last_updated']"
 								},
 								"sink": {
-									"name": "last_updated"
+									"name": "last_updated",
+									"type": "DateTime"
 								}
 							},
 							{
@@ -127,7 +136,8 @@
 									"path": "$['current']['temp_c']"
 								},
 								"sink": {
-									"name": "temp_c"
+									"name": "temp_c",
+									"type": "Double"
 								}
 							},
 							{
@@ -135,7 +145,8 @@
 									"path": "$['current']['temp_f']"
 								},
 								"sink": {
-									"name": "temp_f"
+									"name": "temp_f",
+									"type": "Double"
 								}
 							},
 							{
@@ -143,7 +154,8 @@
 									"path": "$['current']['is_day']"
 								},
 								"sink": {
-									"name": "is_day"
+									"name": "is_day",
+									"type": "Boolean"
 								}
 							},
 							{
@@ -151,7 +163,8 @@
 									"path": "$['current']['condition']['text']"
 								},
 								"sink": {
-									"name": "text"
+									"name": "text",
+									"type": "String"
 								}
 							},
 							{
@@ -167,7 +180,8 @@
 									"path": "$['current']['condition']['code']"
 								},
 								"sink": {
-									"name": "code"
+									"name": "code",
+									"type": "Int16"
 								}
 							},
 							{
@@ -175,7 +189,8 @@
 									"path": "$['current']['wind_mph']"
 								},
 								"sink": {
-									"name": "wind_mph"
+									"name": "wind_mph",
+									"type": "Double"
 								}
 							},
 							{
@@ -183,7 +198,8 @@
 									"path": "$['current']['wind_kph']"
 								},
 								"sink": {
-									"name": "wind_kph"
+									"name": "wind_kph",
+									"type": "Double"
 								}
 							},
 							{
@@ -191,7 +207,8 @@
 									"path": "$['current']['wind_degree']"
 								},
 								"sink": {
-									"name": "wind_degree"
+									"name": "wind_degree",
+									"type": "Double"
 								}
 							},
 							{
@@ -199,7 +216,8 @@
 									"path": "$['current']['wind_dir']"
 								},
 								"sink": {
-									"name": "wind_dir"
+									"name": "wind_dir",
+									"type": "Double"
 								}
 							},
 							{
@@ -207,7 +225,8 @@
 									"path": "$['current']['pressure_mb']"
 								},
 								"sink": {
-									"name": "pressure_mb"
+									"name": "pressure_mb",
+									"type": "Double"
 								}
 							},
 							{
@@ -215,7 +234,8 @@
 									"path": "$['current']['pressure_in']"
 								},
 								"sink": {
-									"name": "pressure_in"
+									"name": "pressure_in",
+									"type": "Double"
 								}
 							},
 							{
@@ -223,7 +243,8 @@
 									"path": "$['current']['precip_mm']"
 								},
 								"sink": {
-									"name": "precip_mm"
+									"name": "precip_mm",
+									"type": "Double"
 								}
 							},
 							{
@@ -231,7 +252,8 @@
 									"path": "$['current']['precip_in']"
 								},
 								"sink": {
-									"name": "precip_in"
+									"name": "precip_in",
+									"type": "Double"
 								}
 							},
 							{
@@ -239,7 +261,8 @@
 									"path": "$['current']['humidity']"
 								},
 								"sink": {
-									"name": "humidity"
+									"name": "humidity",
+									"type": "Double"
 								}
 							},
 							{
@@ -247,7 +270,8 @@
 									"path": "$['current']['cloud']"
 								},
 								"sink": {
-									"name": "cloud"
+									"name": "cloud",
+									"type": "Double"
 								}
 							},
 							{
@@ -255,7 +279,8 @@
 									"path": "$['current']['feelslike_c']"
 								},
 								"sink": {
-									"name": "feelslike_c"
+									"name": "feelslike_c",
+									"type": "Double"
 								}
 							},
 							{
@@ -263,7 +288,8 @@
 									"path": "$['current']['feelslike_f']"
 								},
 								"sink": {
-									"name": "feelslike_f"
+									"name": "feelslike_f",
+									"type": "Double"
 								}
 							},
 							{
@@ -271,7 +297,8 @@
 									"path": "$['current']['windchill_c']"
 								},
 								"sink": {
-									"name": "windchill_c"
+									"name": "windchill_c",
+									"type": "Double"
 								}
 							},
 							{
@@ -279,7 +306,8 @@
 									"path": "$['current']['windchill_f']"
 								},
 								"sink": {
-									"name": "windchill_f"
+									"name": "windchill_f",
+									"type": "Double"
 								}
 							},
 							{
@@ -287,7 +315,8 @@
 									"path": "$['current']['heatindex_c']"
 								},
 								"sink": {
-									"name": "heatindex_c"
+									"name": "heatindex_c",
+									"type": "Double"
 								}
 							},
 							{
@@ -295,7 +324,8 @@
 									"path": "$['current']['heatindex_f']"
 								},
 								"sink": {
-									"name": "heatindex_f"
+									"name": "heatindex_f",
+									"type": "Double"
 								}
 							},
 							{
@@ -303,7 +333,8 @@
 									"path": "$['current']['dewpoint_c']"
 								},
 								"sink": {
-									"name": "dewpoint_c"
+									"name": "dewpoint_c",
+									"type": "Double"
 								}
 							},
 							{
@@ -311,7 +342,8 @@
 									"path": "$['current']['dewpoint_f']"
 								},
 								"sink": {
-									"name": "dewpoint_f"
+									"name": "dewpoint_f",
+									"type": "Double"
 								}
 							},
 							{
@@ -319,7 +351,8 @@
 									"path": "$['current']['vis_km']"
 								},
 								"sink": {
-									"name": "vis_km"
+									"name": "vis_km",
+									"type": "Double"
 								}
 							},
 							{
@@ -327,7 +360,8 @@
 									"path": "$['current']['vis_miles']"
 								},
 								"sink": {
-									"name": "vis_miles"
+									"name": "vis_miles",
+									"type": "Double"
 								}
 							},
 							{
@@ -335,7 +369,8 @@
 									"path": "$['current']['uv']"
 								},
 								"sink": {
-									"name": "uv"
+									"name": "uv",
+									"type": "Double"
 								}
 							},
 							{
@@ -343,7 +378,8 @@
 									"path": "$['current']['gust_mph']"
 								},
 								"sink": {
-									"name": "gust_mph"
+									"name": "gust_mph",
+									"type": "Double"
 								}
 							},
 							{
@@ -351,7 +387,8 @@
 									"path": "$['current']['gust_kph']"
 								},
 								"sink": {
-									"name": "gust_kph"
+									"name": "gust_kph",
+									"type": "Double"
 								}
 							}
 						]
@@ -365,7 +402,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_360",
+						"referenceName": "parquet_data_sink_weather",
 						"type": "DatasetReference"
 					}
 				]
