@@ -1,0 +1,12 @@
+{
+	"name": "SourceDataset_360",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Weather API",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"schema": []
+	}
+}
