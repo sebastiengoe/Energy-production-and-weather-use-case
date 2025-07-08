@@ -1,0 +1,12 @@
+{
+	"name": "current_weather_api",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Curren_weather",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": []
+	}
+}
