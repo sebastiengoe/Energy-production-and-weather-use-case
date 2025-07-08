@@ -1,0 +1,21 @@
+{
+	"name": "WeatherAPI_dataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Weather_API",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"q": "Paris"
+			}
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": "current.json"
+			}
+		},
+		"schema": {}
+	}
+}
