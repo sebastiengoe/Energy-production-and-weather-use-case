@@ -1,6 +1,5 @@
 {
 	"name": "Weather_API",
-	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"parameters": {
 			"q": {
@@ -13,13 +12,8 @@
 		"typeProperties": {
 			"url": "http://api.weatherapi.com/v1/",
 			"enableServerCertificateValidation": true,
-			"authenticationType": "Anonymous",
-			"authHeaders": {
-				"APIKey": {
-					"type": "SecureString",
-					"value": "**********"
-				}
-			}
+			"authenticationType": "Anonymous"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/linkedservices"
 }
