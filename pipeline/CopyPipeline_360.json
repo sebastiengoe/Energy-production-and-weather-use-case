@@ -27,13 +27,15 @@
 						"requestMethod": "GET"
 					},
 					"sink": {
-						"type": "ParquetSink",
+						"type": "DelimitedTextSink",
 						"storeSettings": {
 							"type": "AzureBlobStorageWriteSettings",
 							"copyBehavior": "PreserveHierarchy"
 						},
 						"formatSettings": {
-							"type": "ParquetWriteSettings"
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
 						}
 					},
 					"enableStaging": false,
@@ -402,7 +404,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "parquet_data_sink_weather",
+						"referenceName": "DestinationDataset_360",
 						"type": "DatasetReference"
 					}
 				]
