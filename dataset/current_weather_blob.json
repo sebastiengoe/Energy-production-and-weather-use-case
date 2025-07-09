@@ -1,0 +1,19 @@
+{
+	"name": "current_weather_blob",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "weatherAPI",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "weatherrawdata",
+				"container": "weatherrawdata"
+			}
+		},
+		"schema": {}
+	}
+}
