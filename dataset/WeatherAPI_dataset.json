@@ -5,6 +5,7 @@
 			"referenceName": "Weather_API",
 			"type": "LinkedServiceReference",
 			"parameters": {
+				"key": "613382a0ad58496ea20112028252506",
 				"q": "Paris"
 			}
 		},
