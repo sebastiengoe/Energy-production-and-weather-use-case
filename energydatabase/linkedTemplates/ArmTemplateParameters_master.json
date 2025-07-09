@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "energydatabase"
+		},
+		"AzureFunction1_functionKey": {
+			"value": ""
+		},
+		"Curren_weather_password": {
+			"value": ""
+		},
+		"weatherAPI_connectionString": {
+			"value": ""
+		},
+		"AzureFunction1_properties_typeProperties_functionAppUrl": {
+			"value": ""
+		},
+		"Curren_weather_properties_typeProperties_server": {
+			"value": "synapseenergy.sql.azuresynapse.net"
+		},
+		"Curren_weather_properties_typeProperties_database": {
+			"value": "energyusecase2"
+		},
+		"Curren_weather_properties_typeProperties_userName": {
+			"value": "sqladminuser"
+		},
+		"Weather API_properties_typeProperties_url": {
+			"value": "http://api.weatherapi.com/v1/current.json?key=613382a0ad58496ea20112028252506&q=London&aqi=no"
+		},
+		"Weather_API_properties_typeProperties_url": {
+			"value": "http://api.weatherapi.com/v1/"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
