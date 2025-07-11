@@ -16,15 +16,9 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "JsonSource",
-						"storeSettings": {
-							"type": "AzureBlobStorageReadSettings",
-							"recursive": true,
-							"enablePartitionDiscovery": false
-						},
-						"formatSettings": {
-							"type": "JsonReadSettings"
-						}
+						"type": "SqlDWSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
 					},
 					"sink": {
 						"type": "JsonSink",
@@ -40,7 +34,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "current_weather_blob",
+						"referenceName": "current_weather_api",
 						"type": "DatasetReference"
 					}
 				],
