@@ -1,5 +1,5 @@
 {
-	"name": "pipeline_DS_to_Synapse",
+	"name": "pipeline_HTTP_to_DS",
 	"properties": {
 		"activities": [
 			{
@@ -16,8 +16,47 @@
 				"userProperties": [],
 				"typeProperties": {
 					"method": "GET",
-					"url": "https://api.weatherapi.com/v1/current.json?q=Paris&key=613382a0ad58496ea20112028252506"
+					"url": "https://api.weatherapi.com/v1/current.json?q=Paris&key=613382a0ad58496ea20112028252506/"
 				}
+			},
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "Call_weather_API",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"sink": {
+						"type": "JsonSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings",
+							"copyBehavior": "PreserveHierarchy"
+						},
+						"formatSettings": {
+							"type": "JsonWriteSettings"
+						}
+					},
+					"enableStaging": false
+				},
+				"outputs": [
+					{
+						"referenceName": "current_weather_blob",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"annotations": []
