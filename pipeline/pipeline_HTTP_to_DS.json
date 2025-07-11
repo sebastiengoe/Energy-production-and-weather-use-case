@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"method": "GET",
-					"url": "https://api.weatherapi.com/v1/current.json?q=Paris&key=613382a0ad58496ea20112028252506/"
+					"url": "https://api.weatherapi.com/v1/current.json?q=Paris&key=613382a0ad58496ea20112028252506"
 				}
 			},
 			{
@@ -39,6 +39,16 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "HttpReadSettings",
+							"requestMethod": "GET"
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
+						}
+					},
 					"sink": {
 						"type": "JsonSink",
 						"storeSettings": {
@@ -51,6 +61,12 @@
 					},
 					"enableStaging": false
 				},
+				"inputs": [
+					{
+						"referenceName": "Json1",
+						"type": "DatasetReference"
+					}
+				],
 				"outputs": [
 					{
 						"referenceName": "current_weather_blob",

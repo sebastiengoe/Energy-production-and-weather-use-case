@@ -1,5 +1,5 @@
 {
-	"name": "Pipeline_synapse_to_blob",
+	"name": "Pipeline_DS_to_blob",
 	"properties": {
 		"activities": [
 			{
@@ -20,7 +20,10 @@
 						"storeSettings": {
 							"type": "HttpReadSettings",
 							"requestMethod": "GET",
-							"requestBody": "@activity('WebActivityName').output.response",
+							"requestBody": {
+								"value": "@activitypipeline(pipeline_HTTP_to_DS).Pipeline.output.response",
+								"type": "Expression"
+							},
 							"requestTimeout": ""
 						},
 						"formatSettings": {
