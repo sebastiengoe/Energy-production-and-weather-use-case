@@ -1,5 +1,5 @@
 {
-	"name": "pipeline1",
+	"name": "Pipeline_synapse_to_blob",
 	"properties": {
 		"activities": [
 			{
@@ -16,9 +16,16 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "SqlDWSource",
-						"queryTimeout": "02:00:00",
-						"partitionOption": "None"
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "HttpReadSettings",
+							"requestMethod": "GET",
+							"requestBody": "@activity('WebActivityName').output.response",
+							"requestTimeout": ""
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
+						}
 					},
 					"sink": {
 						"type": "JsonSink",
@@ -34,7 +41,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "current_weather_api",
+						"referenceName": "WeatherAPI_dataset",
 						"type": "DatasetReference"
 					}
 				],
