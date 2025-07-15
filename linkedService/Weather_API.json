@@ -14,7 +14,7 @@
 		"annotations": [],
 		"type": "HttpServer",
 		"typeProperties": {
-			"url": "http://api.weatherapi.com/v1/",
+			"url": "http://api.weatherapi.com/v1/current.json",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "Anonymous"
 		}
