@@ -1,20 +1,10 @@
 {
 	"name": "Weather_API",
 	"properties": {
-		"parameters": {
-			"key": {
-				"type": "string",
-				"defaultValue": "613382a0ad58496ea20112028252506"
-			},
-			"q": {
-				"type": "string",
-				"defaultValue": "Paris"
-			}
-		},
 		"annotations": [],
 		"type": "HttpServer",
 		"typeProperties": {
-			"url": "http://api.weatherapi.com/v1/current.json",
+			"url": "https://api.weatherapi.com/v1/current.json?q=Paris&key=613382a0ad58496ea20112028252506",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "Anonymous"
 		}
