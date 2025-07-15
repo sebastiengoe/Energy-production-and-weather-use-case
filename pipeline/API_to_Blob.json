@@ -1,35 +1,11 @@
 {
-	"name": "pipeline_HTTP_to_DS",
+	"name": "API_to_Blob",
 	"properties": {
 		"activities": [
 			{
-				"name": "Call_weather_API",
-				"type": "WebActivity",
-				"dependsOn": [],
-				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"method": "GET",
-					"url": "https://api.weatherapi.com/v1/current.json?q=Paris&key=613382a0ad58496ea20112028252506"
-				}
-			},
-			{
-				"name": "Copy data1",
+				"name": "CopytoBlob",
 				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "Call_weather_API",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -59,11 +35,18 @@
 							"type": "JsonWriteSettings"
 						}
 					},
-					"enableStaging": false
+					"enableStaging": true,
+					"stagingSettings": {
+						"linkedServiceName": {
+							"referenceName": "weatherAPI",
+							"type": "LinkedServiceReference"
+						},
+						"path": "weatherrawdata/output"
+					}
 				},
 				"inputs": [
 					{
-						"referenceName": "Json1",
+						"referenceName": "WeatherAPI_dataset",
 						"type": "DatasetReference"
 					}
 				],

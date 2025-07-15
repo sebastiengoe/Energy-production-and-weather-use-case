@@ -11,6 +11,7 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": "weatherrawdata",
+				"folderPath": "output",
 				"container": "weatherrawdata"
 			}
 		},

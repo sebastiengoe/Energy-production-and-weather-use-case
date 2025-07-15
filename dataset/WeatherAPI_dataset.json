@@ -13,8 +13,7 @@
 		"type": "Json",
 		"typeProperties": {
 			"location": {
-				"type": "HttpServerLocation",
-				"relativeUrl": "current.json"
+				"type": "HttpServerLocation"
 			}
 		},
 		"schema": {}
