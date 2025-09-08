@@ -1,0 +1,6 @@
+{
+	"name": "seblocalintruntime",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}
