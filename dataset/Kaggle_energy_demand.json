@@ -1,0 +1,139 @@
+{
+	"name": "Kaggle_energy_demand",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Kaggle_energy_demand_weather",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "weatherrawdata"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "time",
+				"type": "String"
+			},
+			{
+				"name": "generation biomass",
+				"type": "String"
+			},
+			{
+				"name": "generation fossil brown coal/lignite",
+				"type": "String"
+			},
+			{
+				"name": "generation fossil coal-derived gas",
+				"type": "String"
+			},
+			{
+				"name": "generation fossil gas",
+				"type": "String"
+			},
+			{
+				"name": "generation fossil hard coal",
+				"type": "String"
+			},
+			{
+				"name": "generation fossil oil",
+				"type": "String"
+			},
+			{
+				"name": "generation fossil oil shale",
+				"type": "String"
+			},
+			{
+				"name": "generation fossil peat",
+				"type": "String"
+			},
+			{
+				"name": "generation geothermal",
+				"type": "String"
+			},
+			{
+				"name": "generation hydro pumped storage aggregated",
+				"type": "String"
+			},
+			{
+				"name": "generation hydro pumped storage consumption",
+				"type": "String"
+			},
+			{
+				"name": "generation hydro run-of-river and poundage",
+				"type": "String"
+			},
+			{
+				"name": "generation hydro water reservoir",
+				"type": "String"
+			},
+			{
+				"name": "generation marine",
+				"type": "String"
+			},
+			{
+				"name": "generation nuclear",
+				"type": "String"
+			},
+			{
+				"name": "generation other",
+				"type": "String"
+			},
+			{
+				"name": "generation other renewable",
+				"type": "String"
+			},
+			{
+				"name": "generation solar",
+				"type": "String"
+			},
+			{
+				"name": "generation waste",
+				"type": "String"
+			},
+			{
+				"name": "generation wind offshore",
+				"type": "String"
+			},
+			{
+				"name": "generation wind onshore",
+				"type": "String"
+			},
+			{
+				"name": "forecast solar day ahead",
+				"type": "String"
+			},
+			{
+				"name": "forecast wind offshore eday ahead",
+				"type": "String"
+			},
+			{
+				"name": "forecast wind onshore day ahead",
+				"type": "String"
+			},
+			{
+				"name": "total load forecast",
+				"type": "String"
+			},
+			{
+				"name": "total load actual",
+				"type": "String"
+			},
+			{
+				"name": "price day ahead",
+				"type": "String"
+			},
+			{
+				"name": "price actual",
+				"type": "String"
+			}
+		]
+	}
+}
